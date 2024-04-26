@@ -6,7 +6,7 @@
 /*   By: melanieyanez <melanieyanez@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 11:19:27 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/04/23 11:37:48 by melanieyane      ###   ########.fr       */
+/*   Updated: 2024/04/24 15:15:12 by melanieyane      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ Fixed::Fixed(void) : _rawValue(0){
 	std::cout << "Default constructor called" << std::endl;
 }
 
-//à implémenter
-Fixed::Fixed(const int integer_value){}
+Fixed::Fixed(const int integer_value) : _rawValue(integer_value << _fractionnalBits) {
+	std::cout << "Integer constructor called" << std::endl;
+}
 
-//à implémenter
-Fixed::Fixed(const float float_value){}
+Fixed::Fixed(const float float_value) : _rawValue(static_cast<int>(roundf(float_value * (1 << _fractionnalBits)))) {
+	std::cout << "Float constructor called" << std::endl;
+}
 
 Fixed::Fixed(const Fixed& src){
 	std::cout << "Copy constructor called" << std::endl;
@@ -48,11 +50,15 @@ void	Fixed::setRawBits(const int raw){
 	_rawValue = raw;
 }
 
-//à implémenter
-float 	Fixed::toFloat(void) const{}
+float 	Fixed::toFloat(void) const{
+	return static_cast<float>(_rawValue) / static_cast<float>(1 << _fractionnalBits);
+}
 
-//à implémenter
-int 	Fixed::toInt(void) const{}
+int 	Fixed::toInt(void) const{
+	return _rawValue >> _fractionnalBits;
+}
 
-//à implémenter
-std::ostream& operator<<(std::ostream& o, const Fixed& fixed){}
+std::ostream& operator<<(std::ostream& o, const Fixed& fixed){
+	o << fixed.toFloat();
+	return o;
+}

@@ -6,7 +6,7 @@
 /*   By: melanieyanez <melanieyanez@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 11:19:49 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/04/23 11:23:38 by melanieyane      ###   ########.fr       */
+/*   Updated: 2024/04/24 15:02:21 by melanieyane      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	main(void){
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
 
-	std::cout << "a is " << a.ToInt() << " as integer " << std::endl;
-	std::cout << "b is " << b.ToInt() << " as integer " << std::endl;
-	std::cout << "c is " << c.ToInt() << " as integer " << std::endl;
-	std::cout << "d is " << d.ToInt() << " as integer " << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer " << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer " << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer " << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer " << std::endl;
 
 	return 0;
 }
