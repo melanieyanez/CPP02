@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: myanez-p <myanez-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: melanieyanez <melanieyanez@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:13:01 by myanez-p          #+#    #+#             */
-/*   Updated: 2024/04/26 12:53:46 by myanez-p         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:48:29 by melanieyane      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ class Fixed{
 		float 	toFloat(void) const;
 		int 	toInt(void) const;
 
-		Fixed	min(Fixed& n1, Fixed& n2);
-		Fixed	min(const Fixed& n1, const Fixed& n2);
-		Fixed	max(Fixed& n1, Fixed& n2);
-		Fixed	max(const Fixed& n1, const Fixed& n2);
+		static Fixed	min(Fixed& n1, Fixed& n2);
+		static Fixed	min(const Fixed& n1, const Fixed& n2);
+		static Fixed	max(Fixed& n1, Fixed& n2);
+		static Fixed	max(const Fixed& n1, const Fixed& n2);
 
 	private:
 		int 				_rawValue;

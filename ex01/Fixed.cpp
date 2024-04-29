@@ -6,11 +6,14 @@
 /*   By: melanieyanez <melanieyanez@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 11:19:27 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/04/24 15:15:12 by melanieyane      ###   ########.fr       */
+/*   Updated: 2024/04/29 14:20:49 by melanieyane      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+/*----------------------------------------------------------------*/
+/* Constructors and destructors */
 
 Fixed::Fixed(void) : _rawValue(0){
 	std::cout << "Default constructor called" << std::endl;
@@ -33,12 +36,8 @@ Fixed::~Fixed(void){
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed& Fixed::operator=(const Fixed& rhs){
-	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &rhs)
-		this->_rawValue = rhs.getRawBits();
-	return *this;
-}
+/*----------------------------------------------------------------*/
+/* Tools */
 
 int Fixed::getRawBits(void) const{
 	std::cout << "getRawBits member function called" << std::endl;
@@ -57,6 +56,19 @@ float 	Fixed::toFloat(void) const{
 int 	Fixed::toInt(void) const{
 	return _rawValue >> _fractionnalBits;
 }
+
+/*----------------------------------------------------------------*/
+/* Overloaded operators */
+
+Fixed& Fixed::operator=(const Fixed& rhs){
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &rhs)
+		this->_rawValue = rhs.getRawBits();
+	return *this;
+}
+
+/*----------------------------------------------------------------*/
+/* Stream operator */
 
 std::ostream& operator<<(std::ostream& o, const Fixed& fixed){
 	o << fixed.toFloat();
