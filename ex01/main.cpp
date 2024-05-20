@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melanieyanez <melanieyanez@student.42.f    +#+  +:+       +#+        */
+/*   By: myanez-p <myanez-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 11:19:49 by melanieyane       #+#    #+#             */
-/*   Updated: 2024/04/24 15:02:21 by melanieyane      ###   ########.fr       */
+/*   Updated: 2024/05/20 12:37:44 by myanez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 int	main(void){
+	
+	std::cout << "*************************************************************************" << std::endl;
+	std::cout << "*Subject tests*" << std::endl << std::endl;
 	
 	Fixed	a;
 	Fixed	const b(10);
@@ -30,6 +33,6 @@ int	main(void){
 	std::cout << "b is " << b.toInt() << " as integer " << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer " << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer " << std::endl;
-
+	
 	return 0;
 }

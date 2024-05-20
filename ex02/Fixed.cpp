@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: melanieyanez <melanieyanez@student.42.f    +#+  +:+       +#+        */
+/*   By: myanez-p <myanez-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 11:12:58 by myanez-p          #+#    #+#             */
-/*   Updated: 2024/04/29 14:18:13 by melanieyane      ###   ########.fr       */
+/*   Updated: 2024/05/20 13:41:23 by myanez-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,20 @@ Fixed::~Fixed(void){
 
 int Fixed::getRawBits(void) const{
 	std::cout << "getRawBits member function called" << std::endl;
-	return _rawValue;
+	return this->_rawValue;
 }
 
 void	Fixed::setRawBits(const int raw){
 	std::cout << "setRawBits member function called" << std::endl;
-	_rawValue = raw;
+	this->_rawValue = raw;
 }
 
 float 	Fixed::toFloat(void) const{
-	return static_cast<float>(_rawValue) / static_cast<float>(1 << _fractionnalBits);
+	return static_cast<float>(this->_rawValue) / static_cast<float>(1 << _fractionnalBits);
 }
 
 int 	Fixed::toInt(void) const{
-	return _rawValue >> _fractionnalBits;
+	return this->_rawValue >> _fractionnalBits;
 }
 
 /*----------------------------------------------------------------*/
